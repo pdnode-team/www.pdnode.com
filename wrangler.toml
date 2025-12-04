@@ -1,5 +1,5 @@
 # wrangler.toml
-
+name = "pdnode"
 # 使用最新的兼容日期，自动启用许多 Node.js 兼容特性
 compatibility_date = "2024-12-01" 
 
