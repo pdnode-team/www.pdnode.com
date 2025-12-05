@@ -25,7 +25,7 @@ onMount(() => {
         <label class="swap swap-rotate">
           <input
             type="checkbox"
-            data-toggle-theme="dark,light"
+            data-toggle-theme="dark, light"
             class="theme-controller"
           />
 

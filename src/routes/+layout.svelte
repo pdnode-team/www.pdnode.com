@@ -7,7 +7,7 @@
 </script>
 
 <svelte:head>
-
+<title>Pdnode</title>
 </svelte:head>
 <div class="flex flex-col min-h-screen min-w-full">
   
