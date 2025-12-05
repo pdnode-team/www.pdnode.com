@@ -9,7 +9,14 @@
 <svelte:head>
 
 </svelte:head>
-
-<Header />
-{@render children()}
-<Footer />
+<div class="flex flex-col min-h-screen min-w-full">
+  
+  <Header />
+  
+  <main class="grow">
+    {@render children()}
+  </main>
+  
+  <Footer />
+  
+</div>
