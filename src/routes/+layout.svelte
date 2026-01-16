@@ -4,6 +4,8 @@
 	import Footer from '$lib/components/Footer.svelte';
 
 	let { children } = $props();
+
+  export const ssr = false;
 </script>
 
 <svelte:head>
@@ -16,7 +18,7 @@
   <main class="grow">
     {@render children()}
   </main>
-  
+
   <Footer />
   
 </div>
