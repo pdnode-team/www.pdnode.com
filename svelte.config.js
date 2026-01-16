@@ -8,11 +8,17 @@ const config = {
 	preprocess: vitePreprocess(),
 	kit: {
 		adapter: adapter({
-			fallback: '200.html', // may differ from host to host
-			pages: 'build',
-      assets: 'build',
-      precompress: false,
-      strict: true
+			config: undefined,
+			platformProxy: {
+				configPath: undefined,
+				environment: undefined,
+				persist: undefined
+			},
+			fallback: 'plaintext',
+			routes: {
+				include: ['/*'],
+				exclude: ['<all>']
+			}
 		})
 
 	}
