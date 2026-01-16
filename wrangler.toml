@@ -13,5 +13,5 @@ compatibility_flags = [
 pages_build_output_dir = "./build"
 
 [vars]
-PUBLIC_POCKETABSE_URL="https:/api.pdnode.com"
+PUBLIC_POCKETABSE_URL="https://api.pdnode.com"
 
