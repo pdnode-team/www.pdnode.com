@@ -3,8 +3,6 @@
 	import * as m from '$lib/paraglide/messages';
 	import { onMount } from 'svelte';
 	import { themeChange } from 'theme-change';
-	import pb from '$lib/pocketbase';
-
 	// NOTE: the element that is using one of the theme attributes must be in the DOM on mount
 	onMount(() => {
 		themeChange(false);
@@ -44,11 +42,6 @@
 					</svg>
 				</label>
 			</li>
-			{#if !pb.authStore.isValid}
-				<li>
-					<a href="/login" class="link">Login</a>
-				</li>
-			{/if}
 			<li>
 				<a href="/pricing" class="link">Pricing</a>
 			</li>

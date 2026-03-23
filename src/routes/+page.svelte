@@ -44,6 +44,8 @@
     <ul class="flex justify-center items-center flex-col gap-1">
       <li class="text-gray-600"><b class=" mr-1">{m.email()}: </b>bret@pdnode.com</li>
       <li class="link text-blue-500"><a href="https://github.com/BretRen/pdnode/issues">Github Issue</a></li>
+      <li class="link text-blue-500"><a href="https://chat.p67.click">Join our Community Chat!</a></li>
+
     </ul>
   </div>
   
