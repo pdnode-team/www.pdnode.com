@@ -152,7 +152,7 @@
 					</div>
 
 					<div class="modal-action">
-						<button class="btn btn-sm sm:btn-md" onclick={closeModal}>我知道了</button>
+						<button class="btn btn-sm sm:btn-md" onclick={closeModal}>I see</button>
 					</div>
 				</div>
 				<button class="modal-backdrop" onclick={closeModal}>Close</button>
