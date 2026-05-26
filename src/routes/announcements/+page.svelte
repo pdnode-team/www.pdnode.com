@@ -134,7 +134,7 @@
 			<div class="modal modal-open modal-bottom sm:modal-middle" role="dialog">
 				<div class="modal-box max-w-2xl">
 					<div class="flex items-center gap-2 mb-3">
-						<div class="badge {activeAnnouncement.badgeClass} text-white">
+						<div class="badge {activeAnnouncement.badgeClass} text-content">
 							{activeAnnouncement.label}
 						</div>
 						<span class="text-xs opacity-50 font-mono"
