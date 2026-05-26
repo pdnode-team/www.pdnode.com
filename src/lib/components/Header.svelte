@@ -1,6 +1,7 @@
 <script lang="ts">
-	import { setLocale } from '$lib/paraglide/runtime.js';
+	import { resolve } from '$app/paths';
 	import * as m from '$lib/paraglide/messages';
+	import { setLocale } from '$lib/paraglide/runtime.js';
 	import { onMount } from 'svelte';
 	import { themeChange } from 'theme-change';
 	// NOTE: the element that is using one of the theme attributes must be in the DOM on mount
@@ -13,7 +14,7 @@
 
 <div class="navbar bg-base-100 shadow-sm">
 	<div class="flex-1">
-		<a class="btn btn-ghost text-xl" href="/">Pdnode</a>
+		<a class="btn btn-ghost text-xl" href={resolve('/')}>Pdnode</a>
 	</div>
 	<div class="flex-none">
 		<ul class="menu menu-horizontal px-1">
@@ -42,9 +43,9 @@
 					</svg>
 				</label>
 			</li>
-			<li>
+			<!-- <li>
 				<a href="/pricing" class="link">Pricing</a>
-			</li>
+			</li> -->
 			<li>
 				<details>
 					<summary>{m['switch-language']()}</summary>

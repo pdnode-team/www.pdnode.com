@@ -5,46 +5,46 @@
 
 	let modalRef: HTMLDialogElement | null = $state(null);
 
-  let intervalId: ReturnType<typeof setInterval>; 
+	let intervalId: ReturnType<typeof setInterval>;
 
 	async function checkStatus() {
-    try {
-      const response = await fetch('http://127.0.0.1:8090/api/health');
+		try {
+			const response = await fetch('http://127.0.0.1:8090/api/health');
 
-      if (response.ok) {
-        status = 'healthy';
-        // 只有当弹窗开着的时候才去关闭
-        if (modalRef?.open) {
-          modalRef.close();
-					window.location.reload()
-        }
-      } else {
-        throw new Error('Unhealthy');
-      }
-    } catch (err) {
-      status = 'unhealthy';
-      // 关键：只有当弹窗没打开时，才尝试打开它
-      if (modalRef && !modalRef.open) {
-        modalRef.showModal();
-      }
-    }
-  }
+			if (response.ok) {
+				status = 'healthy';
+				// 只有当弹窗开着的时候才去关闭
+				if (modalRef?.open) {
+					modalRef.close();
+					window.location.reload();
+				}
+			} else {
+				throw new Error('Unhealthy');
+			}
+		} catch {
+			status = 'unhealthy';
+			// 关键：只有当弹窗没打开时，才尝试打开它
+			if (modalRef && !modalRef.open) {
+				modalRef.showModal();
+			}
+		}
+	}
 
 	onMount(async () => {
 		checkStatus();
 
 		intervalId = setInterval(() => {
-      // 如果用户正在手动点击重试（status === 'checking'），可以跳过这次自动检查
-      if (status !== 'checking') {
-        checkStatus();
-      }
-    }, 5000);
+			// 如果用户正在手动点击重试（status === 'checking'），可以跳过这次自动检查
+			if (status !== 'checking') {
+				checkStatus();
+			}
+		}, 5000);
 	});
 
-  onDestroy(() => {
-    // 组件卸载时必须清除定时器，否则后台会一直请求
-    if (intervalId) clearInterval(intervalId);
-  });
+	onDestroy(() => {
+		// 组件卸载时必须清除定时器，否则后台会一直请求
+		if (intervalId) clearInterval(intervalId);
+	});
 
 	async function handleCheckStatus(e: Event) {
 		e.preventDefault();
