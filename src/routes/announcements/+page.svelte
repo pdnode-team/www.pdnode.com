@@ -137,7 +137,9 @@
 						<div class="badge {activeAnnouncement.badgeClass} text-white">
 							{activeAnnouncement.label}
 						</div>
-						<span class="text-xs opacity-50 font-mono">{activeAnnouncement.created}</span>
+						<span class="text-xs opacity-50 font-mono"
+							>{formatDate(activeAnnouncement.created)}</span
+						>
 					</div>
 
 					<h3 class="font-bold text-xl mb-4 text-base-content">
