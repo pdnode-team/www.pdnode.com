@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { resolve } from '$app/paths';
 	import { onDestroy, onMount } from 'svelte';
 
 	let status = $state('idle');
@@ -9,7 +10,7 @@
 
 	async function checkStatus() {
 		try {
-			const response = await fetch('http://127.0.0.1:8090/api/health');
+			const response = await fetch('https://api.pdnode.com/api/health');
 
 			if (response.ok) {
 				status = 'healthy';
@@ -68,7 +69,7 @@
 		</p>
 		<p>
 			If you don't need to log in, register, view announcements, or subscribe, <a
-				href="/"
+				href={resolve('/')}
 				class="link">please click to return to the homepage.</a
 			>
 		</p>

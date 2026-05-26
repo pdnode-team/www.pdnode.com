@@ -43,9 +43,9 @@
 					</svg>
 				</label>
 			</li>
-			<!-- <li>
-				<a href="/pricing" class="link">Pricing</a>
-			</li> -->
+			<li>
+				<a href={resolve('/announcements')} class="link">Announcements</a>
+			</li>
 			<li>
 				<details>
 					<summary>{m['switch-language']()}</summary>
