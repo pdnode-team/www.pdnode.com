@@ -10,6 +10,15 @@
 
 		// 👆 false parameter is required for svelte
 	});
+	function switchLanguage(locale: 'en' | 'zh') {
+		if (typeof document !== 'undefined') {
+			document.cookie = `PARAGLIDE_LOCALE=${locale}; path=/; max-age=31536000; SameSite=Lax`;
+		}
+		setLocale(locale, { reload: false });
+		if (typeof window !== 'undefined') {
+			window.location.reload();
+		}
+	}
 </script>
 
 <div class="navbar bg-base-100 shadow-sm">
@@ -44,14 +53,24 @@
 				</label>
 			</li>
 			<li>
+				<a href={resolve('/products/pidan-panel')} class="link flex items-center gap-1.5">
+					<span>Pidan Panel</span>
+					<span class="badge badge-xs badge-primary font-mono uppercase">NEW</span>
+				</a>
+			</li>
+			<li>
 				<a href={resolve('/announcements')} class="link">Announcements</a>
 			</li>
 			<li>
 				<details>
 					<summary>{m['switch-language']()}</summary>
 					<ul class="bg-base-100 rounded-t-none p-2">
-						<li class="m-2"><button onclick={() => setLocale('en')}>English</button></li>
-						<li class="m-2"><button onclick={() => setLocale('zh')}>简体中文</button></li>
+						<li class="m-2">
+							<button type="button" onclick={() => switchLanguage('en')}>English</button>
+						</li>
+						<li class="m-2">
+							<button type="button" onclick={() => switchLanguage('zh')}>简体中文</button>
+						</li>
 					</ul>
 				</details>
 			</li>

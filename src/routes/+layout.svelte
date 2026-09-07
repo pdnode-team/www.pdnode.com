@@ -1,5 +1,4 @@
 <script lang="ts">
-	import CheckPocketbaseStatus from '$lib/components/CheckPocketbaseStatus.svelte';
 	import Footer from '$lib/components/Footer.svelte';
 	import Header from '$lib/components/Header.svelte';
 	import './layout.css';
@@ -17,7 +16,6 @@
 		{@render children()}
 	</main>
 
-	<CheckPocketbaseStatus />
 
 	<Footer />
 </div>
