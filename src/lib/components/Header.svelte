@@ -53,12 +53,6 @@
 				</label>
 			</li>
 			<li>
-				<a href={resolve('/products/pidan-panel')} class="link flex items-center gap-1.5">
-					<span>Pidan Panel</span>
-					<span class="badge badge-xs badge-primary font-mono uppercase">NEW</span>
-				</a>
-			</li>
-			<li>
 				<a href={resolve('/announcements')} class="link">Announcements</a>
 			</li>
 			<li>
